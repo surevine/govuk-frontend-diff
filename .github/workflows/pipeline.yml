@@ -31,7 +31,7 @@ jobs:
       - run: npm ci
       - name: Build project
         run: npm run create-executable
-      - uses: actions/upload-artifact@v2.2.1
+      - uses: actions/upload-artifact@v3.1.2
         with:
           name: bin
           path: bin
