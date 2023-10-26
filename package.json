@@ -1,6 +1,6 @@
 {
   "name": "govuk-frontend-diff",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Command line tool to compare a custom implementation of govuk-frontend templates with the reference Nunjucks",
   "main": "index.js",
   "bin": "index.js",

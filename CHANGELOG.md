@@ -12,9 +12,16 @@
 
 ## Releases
 
+### v2.0.0
+
+#### Breaking changes
+
+- Updated to use GOV.UK Frontend v5.x.x's directory structure
+
 ### v1.1.2
 
 - Fix govuk-frontend v4.4.0 tests by no longer decoding encoded html entities with `ent.decode`.
+
 ### v1.1.1
 
 - Fix broken `skip-hidden` functionality added in last version.
@@ -27,7 +34,7 @@
 
 #### Fixes
 
-- Remove workaround for govuk examples which specified serviceName but not serviceUrl causing rendering differences. See https://github.com/alphagov/govuk-frontend/pull/1825
+- Remove workaround for govuk examples which specified serviceName but not serviceUrl causing rendering differences. See <https://github.com/alphagov/govuk-frontend/pull/1825>
 
 ### v1.0.0
 

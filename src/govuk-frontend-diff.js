@@ -46,7 +46,7 @@ async function diffSingleComponentExample(
 
   const expected = cleanHtml(
     nunjucksEnv.render(
-      path.join('src/govuk/components', component, 'template.njk'),
+      path.join('packages/govuk-frontend/src/govuk/components', component, 'template.njk'),
       {
         params: example.data,
       }
@@ -82,7 +82,7 @@ async function diffSingleComponent(
       path.join(
         config.tempDirectory,
         version,
-        'src/govuk/components',
+        'packages/govuk-frontend/src/govuk/components',
         component,
         `${component}.yaml`
       ),

@@ -6,7 +6,7 @@
 
 Command line tool to compare a custom implementation of govuk-frontend templates with the reference Nunjucks.
 
-The tools works by rendering the govuk-frontend Nunjucks templates using the [example data provided by govuk-frontend](https://github.com/alphagov/govuk-frontend/blob/master/src/govuk/components/button/button.yaml) for each component. It then passes this same data to an http server (which you need to provide) and expects to receive html responses. It then compares the two using [https://github.com/markedjs/html-differ](https://github.com/markedjs/html-differ).
+The tools works by rendering the govuk-frontend Nunjucks templates using the [example data provided by govuk-frontend](https://github.com/alphagov/govuk-frontend/blob/main/packages/govuk-frontend/src/govuk/components/button/button.yaml) for each component. It then passes this same data to an http server (which you need to provide) and expects to receive html responses. It then compares the two using [https://github.com/markedjs/html-differ](https://github.com/markedjs/html-differ).
 
 ---
 
