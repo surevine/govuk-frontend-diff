@@ -17,6 +17,7 @@
 #### Breaking changes
 
 - Updated to use GOV.UK Frontend v5.x.x's directory structure
+- Uses new test fixture example key of `options` instead of `data`
 
 ### v1.1.2
 
