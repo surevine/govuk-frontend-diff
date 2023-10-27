@@ -52,13 +52,13 @@ async function diffSingleComponentExample(
         'template.njk'
       ),
       {
-        params: example.data,
+        params: example.options,
       }
     )
   );
 
   const actual = cleanHtml(
-    await renderCallback({ component, params: example.data })
+    await renderCallback({ component, params: example.options })
   );
 
   const isEqualPromise = htmlDiffer.isEqual(actual, expected);
@@ -181,11 +181,11 @@ async function diffTemplate(
         }
 
         const expected = cleanHtml(
-          nunjucksEnv.render('base-template.njk', example.data)
+          nunjucksEnv.render('base-template.njk', example.options)
         );
 
         const actual = cleanHtml(
-          await renderCallback({ template: true, params: example.data })
+          await renderCallback({ template: true, params: example.options })
         );
 
         const isEqualPromise = htmlDiffer.isEqual(actual, expected);
