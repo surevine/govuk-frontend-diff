@@ -42,7 +42,9 @@ async function performDiff(url, version, options) {
 
 const { argv } = yargs
   .scriptName('govuk-frontend-diff')
-  .usage('Usage: $0 http://localhost:3000 --govuk-frontend-version=v5.0.0-beta.0')
+  .usage(
+    'Usage: $0 http://localhost:3000 --govuk-frontend-version=v5.0.0-beta.0'
+  )
   .usage(
     'Usage: $0 http://localhost:3000 --govuk-frontend-version=v5.0.0-beta.0 --exclude=page-template'
   )
