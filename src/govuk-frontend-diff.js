@@ -46,15 +46,19 @@ async function diffSingleComponentExample(
 
   const expected = cleanHtml(
     nunjucksEnv.render(
-      path.join('src/govuk/components', component, 'template.njk'),
+      path.join(
+        'packages/govuk-frontend/src/govuk/components',
+        component,
+        'template.njk'
+      ),
       {
-        params: example.data,
+        params: example.options,
       }
     )
   );
 
   const actual = cleanHtml(
-    await renderCallback({ component, params: example.data })
+    await renderCallback({ component, params: example.options })
   );
 
   const isEqualPromise = htmlDiffer.isEqual(actual, expected);
@@ -82,7 +86,7 @@ async function diffSingleComponent(
       path.join(
         config.tempDirectory,
         version,
-        'src/govuk/components',
+        'packages/govuk-frontend/src/govuk/components',
         component,
         `${component}.yaml`
       ),
@@ -177,11 +181,11 @@ async function diffTemplate(
         }
 
         const expected = cleanHtml(
-          nunjucksEnv.render('base-template.njk', example.data)
+          nunjucksEnv.render('base-template.njk', example.options)
         );
 
         const actual = cleanHtml(
-          await renderCallback({ template: true, params: example.data })
+          await renderCallback({ template: true, params: example.options })
         );
 
         const isEqualPromise = htmlDiffer.isEqual(actual, expected);

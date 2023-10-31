@@ -6,7 +6,7 @@ function getGovukComponentList(version) {
   const govukComponentPath = path.join(
     config.tempDirectory,
     version,
-    'src/govuk/components'
+    'packages/govuk-frontend/src/govuk/components'
   );
   return glob
     .sync(path.join(govukComponentPath, '**/macro.njk'))
