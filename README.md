@@ -39,8 +39,8 @@ Please note this tool will only work with versions of govuk-frontend later than 
 ## Usage
 
 ```
-Usage: govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.7.0
-Usage: govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.7.0
+Usage: govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v5.0.0-beta.0
+Usage: govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v5.0.0-beta.0
 --exclude=page-template
 
 Commands:
@@ -65,7 +65,7 @@ Options:
   --help                    Show help                                  [boolean]
   --version                 Show version number                        [boolean]
   --govuk-frontend-version  Version of govuk-frontend to test against.
-                            This will normally be references to tags like v3.7.0
+                            This will normally be references to tags like v5.0.0-beta.0
                             but this will accept any commit-ish such as branches
                             or even commit identifiers.
                             If not specified, the most recent govuk-frontend tag
