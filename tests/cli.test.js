@@ -63,10 +63,10 @@ describe('govuk-frontend-diff cli', () => {
   });
 
   it('checks all pass when passing the Nunjucks reference templates back through it', async (done) => {
-    const [server, port] = await runExampleServer('v3.7.0');
+    const [server, port] = await runExampleServer('v5.0.0-beta.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(0);
@@ -79,7 +79,7 @@ describe('govuk-frontend-diff cli', () => {
     const [server, port] = await runNonsenseServer();
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --hide-diffs --govuk-frontend-version=v3.7.0`
+      `http://localhost:${port} --hide-diffs --govuk-frontend-version=v5.0.0-beta.0`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(1);
@@ -94,7 +94,7 @@ describe('govuk-frontend-diff cli', () => {
     const [server, port] = await runExampleServer('v3.5.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(1);
@@ -112,10 +112,10 @@ describe('govuk-frontend-diff cli', () => {
   // });
 
   it('can run a subset of the checks by excluding some', async (done) => {
-    const [server, port] = await runExampleServer('v3.7.0');
+    const [server, port] = await runExampleServer('v5.0.0-beta.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0 --exclude button accordion page-template`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0 --exclude button accordion page-template`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(0);
@@ -125,10 +125,10 @@ describe('govuk-frontend-diff cli', () => {
   });
 
   it('can run a subset of the checks by explicitly including some', async (done) => {
-    const [server, port] = await runExampleServer('v3.7.0');
+    const [server, port] = await runExampleServer('v5.0.0-beta.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0 --include button page-template`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0 --include button page-template`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(0);
@@ -138,10 +138,10 @@ describe('govuk-frontend-diff cli', () => {
   });
 
   it('throws an error if the passed render script throws an error', async (done) => {
-    const [server] = await runExampleServer('v3.7.0');
+    const [server] = await runExampleServer('v5.0.0-beta.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http:// --govuk-frontend-version=v3.7.0`
+      `http:// --govuk-frontend-version=v5.0.0-beta.0`
     );
     expect(stdout + stderr).toEqual(
       expect.stringContaining('RequestError: getaddrinfo')
@@ -158,7 +158,7 @@ describe('govuk-frontend-diff cli', () => {
     const [server, port] = await runExampleServer('v3.0.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0 --include button`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0 --include button`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(1);
@@ -173,7 +173,7 @@ describe('govuk-frontend-diff cli', () => {
     const [server, port] = await runExampleServer('v3.0.0');
 
     const { exitCode, stdout, stderr } = await run(
-      `http://localhost:${port} --govuk-frontend-version=v3.7.0 --include button --hide-diffs`
+      `http://localhost:${port} --govuk-frontend-version=v5.0.0-beta.0 --include button --hide-diffs`
     );
     expect(stdout + stderr).toMatchSnapshot();
     expect(exitCode).toEqual(1);
